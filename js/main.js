@@ -161,10 +161,14 @@ function renderStoryList(listId, guideId, entries, options) {
       figureClasses += " story-row__figure--video";
       mediaHtml =
         '<div class="video-player">' +
-        "<video preload=\"metadata\"" +
-        (entry.poster ? ' poster="' + entry.poster + '"' : "") +
+        // The first video loads right away; the rest wait (data-poster /
+        // data-src) until initVideoLoadQueue() releases them, top to bottom.
+        '<video preload="' + (index === 0 ? "auto" : "none") + '"' +
+        (entry.poster
+          ? (index === 0 ? ' poster="' : ' data-poster="') + entry.poster + '"'
+          : "") +
         ">" +
-        '<source src="' +
+        "<source " + (index === 0 ? "src" : "data-src") + '="' +
         entry.video +
         '">' +
         "Your browser doesn't support embedded video. " +
@@ -236,6 +240,8 @@ function renderStoryList(listId, guideId, entries, options) {
     }
   });
 
+  if (options.isVideo) initVideoLoadQueue(list);
+
   if (guide) {
     var links = Array.prototype.map.call(list.children, function (row) {
       var heading = row.querySelector("h2");
@@ -267,6 +273,72 @@ function renderStoryList(listId, guideId, entries, options) {
 
   initFadeIns();
   initGuideHighlight(list, guide);
+}
+
+// Loads the video page's media in order: the top video (and its poster)
+// first, then each one below it as the previous finishes loading its
+// metadata. A video also loads early if the visitor scrolls or jumps
+// near it, so nobody waits on the queue to see what they navigated to.
+function initVideoLoadQueue(list) {
+  var videos = Array.prototype.slice.call(list.querySelectorAll("video"));
+  if (!videos.length) return;
+
+  function activate(video) {
+    if (video.getAttribute("data-activated")) return;
+    video.setAttribute("data-activated", "1");
+    var poster = video.getAttribute("data-poster");
+    if (poster) {
+      video.setAttribute("poster", poster);
+      video.removeAttribute("data-poster");
+    }
+    var source = video.querySelector("source[data-src]");
+    if (source) {
+      source.setAttribute("src", source.getAttribute("data-src"));
+      source.removeAttribute("data-src");
+    }
+    video.preload = "metadata";
+    video.load();
+  }
+
+  // Calls cb once when the video's metadata arrives (or after a
+  // timeout, so one slow or broken file can't stall the whole queue).
+  function whenReady(video, cb) {
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      cb();
+    }
+    var timer = setTimeout(finish, 6000);
+    if (video.readyState >= 1) return finish();
+    video.addEventListener("loadedmetadata", finish);
+    video.addEventListener("error", finish);
+  }
+
+  var i = 0;
+  function next() {
+    i += 1;
+    if (i >= videos.length) return;
+    activate(videos[i]);
+    whenReady(videos[i], next);
+  }
+  whenReady(videos[0], next);
+
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            activate(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { rootMargin: "400px 0px" }
+    );
+    videos.forEach(function (v) { io.observe(v); });
+  }
 }
 
 // Clicking a guide link scrolls to its story and briefly darkens

@@ -40,12 +40,22 @@
       <h1>Dear Harabeoji</h1>
       <p class="project-subtitle">Upcoming Documentary</p>
       <figure class="project-trailer">
-        <video controls preload="metadata"
-               poster="../images/projects/Thumb.jpg">
-          <source src="../images/projects/Compressed.mp4" type="video/mp4">
-          Your browser doesn't support embedded video.
-          <a href="../images/projects/Compressed.mp4">Download the trailer</a> instead.
-        </video>
+        <!-- Same custom player as the Video Shorts page (play button +
+             mute toggle, resets to the poster when it ends). Wired up by
+             initVideoPlayer() from main.js, called in the script below. -->
+        <div class="video-player" id="trailer-player">
+          <video id="trailer" preload="metadata" playsinline
+                 poster="../images/projects/Thumb.png">
+            <source src="../images/projects/Compressed.mov">
+            Your browser doesn't support embedded video.
+            <a href="../images/projects/Compressed.mov">Download the trailer</a> instead.
+          </video>
+          <button type="button" class="video-player__play" aria-label="Play video"></button>
+          <button type="button" class="video-player__mute" aria-label="Mute" aria-pressed="false">
+            <svg class="icon-unmuted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+            <svg class="icon-muted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+          </button>
+        </div>
         <figcaption>Documentary Trailer</figcaption>
       </figure>
       <p>My Harabeoji (grandfather) passed away before I was born. Growing up, I would listen to stories about him from my father. He said Harabeoji was an inventor who spent his life dedicated to creating tools like spokes of a wheel or a garlic cutter. However, Harabeoji's obsession with his work pushed our branch of the family into poverty, leaving behind a culture of risk aversion and systemic barriers that affects my aunts, uncles, and cousins in Korea to this day.</p>
@@ -64,6 +74,28 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+    // Same player behaviour as the Video Shorts page.
+    initVideoPlayer(document.getElementById("trailer-player"));
+
+    // If the trailer can't load, say so and log the reason to the
+    // browser console (F12) for debugging.
+    (function () {
+      var v = document.getElementById("trailer");
+      var shown = false;
+      function fail(why) {
+        console.error("Trailer failed to load:", why, v.currentSrc || "");
+        if (shown) return;
+        shown = true;
+        var note = document.createElement("p");
+        note.className = "project-subtitle";
+        note.textContent = "The trailer couldn't be played in this browser.";
+        document.getElementById("trailer-player").after(note);
+      }
+      v.addEventListener("error", function () { fail(v.error && v.error.code); });
+      v.querySelector("source").addEventListener("error", function () { fail("source error"); });
+    })();
+  </script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
