@@ -55,6 +55,9 @@
             <svg class="icon-unmuted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
             <svg class="icon-muted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
           </button>
+          <button type="button" class="video-player__fullscreen" aria-label="Full screen">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
         <figcaption>Documentary Trailer</figcaption>
       </figure>
@@ -93,7 +96,9 @@
         document.getElementById("trailer-player").after(note);
       }
       v.addEventListener("error", function () { fail(v.error && v.error.code); });
-      v.querySelector("source").addEventListener("error", function () { fail("source error"); });
+      // Only fail once the LAST source has also failed (the first may just be missing)
+      var sources = v.querySelectorAll("source");
+      sources[sources.length - 1].addEventListener("error", function () { fail("source error"); });
     })();
   </script>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>

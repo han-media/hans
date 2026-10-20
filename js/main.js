@@ -181,6 +181,9 @@ function renderStoryList(listId, guideId, entries, options) {
         '<svg class="icon-unmuted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 0 1 0 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a9 9 0 0 1 0 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>' +
         '<svg class="icon-muted" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M15.5 9.5l5 5m0-5l-5 5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>' +
         "</button>" +
+        '<button type="button" class="video-player__fullscreen" aria-label="Full screen">' +
+        '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+        "</button>" +
         "</div>";
     } else {
       var images = entry.images && entry.images.length ? entry.images : [entry.image];
@@ -463,6 +466,60 @@ function initVideoPlayer(wrapper) {
     muteBtn.setAttribute("aria-pressed", video.muted ? "true" : "false");
     muteBtn.setAttribute("aria-label", video.muted ? "Unmute" : "Mute");
   });
+
+  // ---- Full screen (optional: only wired up if the markup has the button) ----
+  var fsBtn = wrapper.querySelector(".video-player__fullscreen");
+  if (fsBtn) {
+    var wrapperFs = wrapper.requestFullscreen || wrapper.webkitRequestFullscreen;
+    var videoFs = video.webkitEnterFullscreen; // iPhone Safari
+
+    function currentFsElement() {
+      return document.fullscreenElement || document.webkitFullscreenElement;
+    }
+    function exitFs() {
+      if (document.exitFullscreen) return document.exitFullscreen();
+      if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+    }
+
+    if (!wrapperFs && !videoFs) {
+      fsBtn.hidden = true; // browser can't do it, so don't show a dead button
+    } else {
+      fsBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (currentFsElement()) {
+          exitFs();
+        } else if (wrapperFs) {
+          // Android, iPad, desktop: fullscreen the wrapper so the custom
+          // play/mute controls stay available.
+          var req = wrapperFs.call(wrapper);
+          if (req && req.catch) req.catch(function () {});
+        } else {
+          // iPhone: only the <video> itself can go fullscreen, and Apple's
+          // native player (with its own controls) takes over.
+          videoFs.call(video);
+        }
+      });
+
+      // Keep the button label in sync with the state
+      function syncFsLabel() {
+        var on = !!currentFsElement();
+        fsBtn.setAttribute("aria-label", on ? "Exit full screen" : "Full screen");
+      }
+      document.addEventListener("fullscreenchange", syncFsLabel);
+      document.addEventListener("webkitfullscreenchange", syncFsLabel);
+
+      // When the video finishes it resets to the poster; leave fullscreen too.
+      video.addEventListener("ended", function () {
+        if (currentFsElement() === wrapper) exitFs();
+      });
+    }
+  }
+
+  // Touch screens have no hover, so tapping the player briefly reveals the
+  // buttons (mute + full screen) while the video is playing.
+  wrapper.addEventListener("touchstart", function () {
+    if (!video.paused) revealMuteButton();
+  }, { passive: true });
 }
 
 // Highlights whichever story's top has most recently passed a
