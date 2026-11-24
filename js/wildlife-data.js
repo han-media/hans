@@ -20,22 +20,12 @@
 const wildlifeStories = [
   {
     images: [
-      "images/wildlife/14 Oriental Magpie.jpg",
-      "images/wildlife/14.5.jpg",
-    ],
-    alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
-  },
-  {
-    images: [
       "images/wildlife/13 Common Gull.jpg",
       "images/wildlife/13.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
+    meta: "Saemangeum and Daejangdo",
+    title: "Common Gull",
     text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
   },
   {
@@ -44,8 +34,8 @@ const wildlifeStories = [
       "images/wildlife/12.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
+    meta: "Saemangeum and Daejangdo",
+    title: "Vega Gull",
     text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
   },
   {
@@ -54,8 +44,18 @@ const wildlifeStories = [
       "images/wildlife/11.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
+    meta: "Saemangeum and Daejangdo",
+    title: "Japanese Cormorant",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/14 Oriental Magpie.jpg",
+      "images/wildlife/14.5.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Gunsan, South Korea",
+    title: "Oriental Magpie",
     text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
   },
   {
@@ -63,8 +63,8 @@ const wildlifeStories = [
       "images/wildlife/10 Daurian Redstart.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
+    meta: "Gunsan, South Korea",
+    title: "Daurian Redstart",
     text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
   },
   {
