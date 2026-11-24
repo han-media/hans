@@ -20,17 +20,7 @@
 const wildlifeStories = [
   {
     images: [
-      "images/wildlife/15.jpg",
-      "images/wildlife/15.5.jpg",
-    ],
-    alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
-  },
-  {
-    images: [
-      "images/wildlife/14.jpg",
+      "images/wildlife/14 Oriental Magpie.jpg",
       "images/wildlife/14.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
@@ -40,7 +30,7 @@ const wildlifeStories = [
   },
   {
     images: [
-      "images/wildlife/13.jpg",
+      "images/wildlife/13 Common Gull.jpg",
       "images/wildlife/13.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
@@ -50,7 +40,7 @@ const wildlifeStories = [
   },
   {
     images: [
-      "images/wildlife/12.jpg",
+      "images/wildlife/12 Vega Gull.jpg",
       "images/wildlife/12.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
@@ -60,7 +50,8 @@ const wildlifeStories = [
   },
   {
     images: [
-      "images/wildlife/11.jpg",
+      "images/wildlife/11 Japanese Cormorant.jpg",
+      "images/wildlife/11.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Chesapeake & Ohio Canal National Historical Park",
@@ -69,7 +60,7 @@ const wildlifeStories = [
   },
   {
     images: [
-      "images/wildlife/10.jpg",
+      "images/wildlife/10 Daurian Redstart.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Chesapeake & Ohio Canal National Historical Park",
