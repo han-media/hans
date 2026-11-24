@@ -20,6 +20,72 @@
 const wildlifeStories = [
   {
     images: [
+      "images/wildlife/16.jpg",
+      "images/wildlife/16.5.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/15.jpg",
+      "images/wildlife/15.5.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/14.jpg",
+      "images/wildlife/14.5.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/13.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/12.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/11.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/10.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Chesapeake & Ohio Canal National Historical Park",
+    title: "Vultures Circling the Sky",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
       "images/wildlife/9 Turkey Vulture.jpg",
       "images/wildlife/9.5.jpg",
     ],
@@ -81,21 +147,21 @@ const wildlifeStories = [
       "images/wildlife/2 American Crow.jpg",
       "images/wildlife/2.5.jpg",
     ],
-    alt: "Replace with a description of this photograph for screen readers",
+    alt: "The Crows Off Old Rag",
     meta: "Shenandoah National Park",
     title: "The Crows Off Old Rag",
     text: "At the top of Old Rag, the American Crows dive from the sides of the mountain. Hiking down from the summit at Byrd’s Nest, you can see a roughly drawn illustration of a crow which made me chuckle.",
   },
   {
     images: ["images/wildlife/3 Dark-eyed Junco.jpg"],
-    alt: "Replace with a description of this photograph for screen readers",
+    alt: "Contemplative Junco",
     meta: "Shenandoah National Park",
     title: "Contemplative Junco",
     text: "I hiked Old Rag in February, which required some extra preparation. On my way up, after being passed by a pair of brothers, a small Dark-Eyed Junco landed in front of me. I quickly took out my camera and captured this photo of the junco looking at the journey ahead.",
   },
   {
     images: ["images/wildlife/1 White Tail Deer.jpg"],
-    alt: "Replace with a description of this photograph for screen readers",
+    alt: "Deer in the Woods",
     meta: "Shenandoah National Park",
     title: "Deer in the Woods",
     text: "As I was driving to Shenandoah, I saw a family of White-Tailed Deers. Sitting in my car, I managed to take this photo of a deer gazing into the distance.",
