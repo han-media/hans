@@ -20,16 +20,6 @@
 const wildlifeStories = [
   {
     images: [
-      "images/wildlife/16.jpg",
-      "images/wildlife/16.5.jpg",
-    ],
-    alt: "Replace with a description of this photograph for screen readers",
-    meta: "Chesapeake & Ohio Canal National Historical Park",
-    title: "Vultures Circling the Sky",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
-  },
-  {
-    images: [
       "images/wildlife/15.jpg",
       "images/wildlife/15.5.jpg",
     ],
@@ -51,6 +41,7 @@ const wildlifeStories = [
   {
     images: [
       "images/wildlife/13.jpg",
+      "images/wildlife/13.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Chesapeake & Ohio Canal National Historical Park",
@@ -60,6 +51,7 @@ const wildlifeStories = [
   {
     images: [
       "images/wildlife/12.jpg",
+      "images/wildlife/12.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Chesapeake & Ohio Canal National Historical Park",
