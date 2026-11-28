@@ -25,7 +25,7 @@ const wildlifeStories = [
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Saemangeum and Daejangdo",
-    title: "Common Gull Above",
+    title: "Common Gulls Above",
     text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
   },
   {
@@ -35,8 +35,8 @@ const wildlifeStories = [
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Saemangeum and Daejangdo",
-    title: "Large Billed Crow",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+    title: "Crows of Saemangeum",
+    text: "In 1991, construction began on a large sea wall that would reclaim land off the coast of Gunsan. As I saw a rice field of land that was once a getbol as human intervention met nature. This land was once an important grounds for endangered migratory bird populations, but perhaps almost poetically, all the birds we saw were Large Black Crows scattered through the fields.",
   },
   {
     images: [
@@ -66,7 +66,7 @@ const wildlifeStories = [
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Yubudo Island",
     title: "Yubudo's Dog",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+    text: "Yubudo Island holds a small village .",
   },
   {
     images: [
@@ -77,7 +77,7 @@ const wildlifeStories = [
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Yubudo Island",
     title: "Gulls Near Grandpa's Island",
-    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+    text: "Sitting off the coast next to a Hyundai Factory and S-Oil storage facility, we saw a small boat enter into the horizon. We entered into the boat and as we rode to visit Grandpa's island, we passed by the local gulls, some who even glided near the top of the boat.",
   },
   {
     images: [
