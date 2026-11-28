@@ -60,6 +60,25 @@ const wildlifeStories = [
   },
   {
     images: [
+      "images/wildlife/17 Dog.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Yubudo Island",
+    title: "Yubudo's Dog",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
+      "images/wildlife/16 Gull.jpg",
+      "images/wildlife/16.5.jpg",
+    ],
+    alt: "Replace with a description of this photograph for screen readers",
+    meta: "Yubudo Island",
+    title: "Gulls Near Grandpa's Island",
+    text: "Circling above the Chesapeake & Ohio Canal National Historical Park was a kettle of Turkey Vultures. Luckily for me, the vultures swooped down low enough for me to snag these photos.",
+  },
+  {
+    images: [
       "images/wildlife/14 Oriental Magpie.jpg",
       "images/wildlife/14.5.jpg",
     ],
