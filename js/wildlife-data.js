@@ -61,6 +61,7 @@ const wildlifeStories = [
   {
     images: [
       "images/wildlife/17 Dog.jpg",
+      "images/wildlife/17.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
     meta: "Yubudo Island",
@@ -70,6 +71,7 @@ const wildlifeStories = [
   {
     images: [
       "images/wildlife/16 Gull.jpg",
+      "images/wildlife/16.1.jpg",
       "images/wildlife/16.5.jpg",
     ],
     alt: "Replace with a description of this photograph for screen readers",
